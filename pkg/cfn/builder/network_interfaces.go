@@ -64,7 +64,7 @@ func buildNetworkInterfaces(
 		// Due to ASG incompatibilities, we create each network card
 		// with its own device
 		for i := 1; i < int(numEFAs); i++ {
-			ni := defaultNetworkInterface(securityGroups, i, i)
+			ni := defaultNetworkInterface(securityGroups, 1, i)
 			ni.InterfaceType = gfnt.NewString("efa")
 			nis = append(nis, ni)
 		}
